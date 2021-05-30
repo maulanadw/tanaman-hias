@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddProductActivity">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="@drawable/shape_rectangle">
+        <ImageButton
+            android:id="@+id/btnKembali"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_white"
+            android:background="@null"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Tambah Tanaman"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <!-- Form untuk input data -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/ivIconProduk"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_add_shopping_cart_primary"
+            app:c_border="true"
+            app:c_border_color="@color/primary_color"
+            app:c_border_width="1dp"/>
+
+        <EditText
+            android:id="@+id/etJudulProduk"
+            android:layout_below="@+id/ivIconProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_title_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textPersonName|textCapWords"
+            android:hint="Nama Tanaman"/>
+
+        <EditText
+            android:id="@+id/etDeskripsiProduk"
+            android:layout_below="@+id/etJudulProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_title_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:hint="Deskripsi"/>
+
+        <TextView
+            android:id="@+id/tvKategoriProduk"
+            android:layout_below="@+id/etDeskripsiProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_categories_gray"
+            android:drawableEnd="@drawable/ic_down_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:hint="Kategori"/>
+
+        <EditText
+            android:id="@+id/etBerat"
+            android:layout_below="@+id/tvKategoriProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_cart_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapWords"
+            android:hint="Berat (gram/ kilogram)"/>
+
+        <EditText
+            android:id="@+id/etHarga"
+            android:layout_below="@+id/etBerat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_money_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Rp"/>
+
+        <!-- Diskon produk atau tidak? -->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/diskonSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/etHarga"
+            android:text="Sedang diskon"/>
+
+        <EditText
+            android:id="@+id/etHargaDiskon"
+            android:layout_below="@+id/diskonSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_money_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Harga Diskon"/>
+
+        <EditText
+            android:id="@+id/etHargaDiskonPersen"
+            android:layout_below="@+id/etHargaDiskon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_money_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapSentences"
+            android:hint="misal : 10%"/>
+
+        <Button
+            android:id="@+id/btnTambah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah Tanaman"
+            android:layout_below="@id/etHargaDiskonPersen"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:minWidth="150dp"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

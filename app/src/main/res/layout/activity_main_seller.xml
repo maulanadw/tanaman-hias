@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainSellerActivity">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/shape_rectangle">
+
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logout_white"
+            android:layout_alignParentEnd="true"
+            android:background="@null"/>
+        <ImageButton
+            android:id="@+id/btnEditProfil"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_edit_white"
+            android:layout_toStartOf="@id/btnLogout"
+            android:background="@null"/>
+
+        <!-- Menambahkan tombol produk -->
+        <ImageButton
+            android:id="@+id/btnTambahProduk"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_add_shopping_cart_white"
+            android:layout_toStartOf="@id/btnEditProfil"
+            android:background="@null"/>
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/ivProfil"
+            app:c_border="true"
+            app:c_border_color="@color/white"
+            android:src="@drawable/ic_store_gray"/>
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Nama"
+            android:layout_toEndOf="@id/ivProfil"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tvNamaToko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivProfil"
+            android:layout_below="@+id/tvNama"
+            android:text="Nama Toko"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivProfil"
+            android:layout_below="@+id/tvNamaToko"
+            android:text="Email"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
