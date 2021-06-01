@@ -4,19 +4,9 @@ public class Constants {
 
     // kategori tanaman
     String[] options = {
-            "Aglaonema",
-            "Anthurium",
-            "Calathea",
-            "Dieffenbachia",
-            "Epipremnum",
-            "Asplenium",
-            "Monstera",
-            "Pilea",
-            "Dracaena",
-            "Zamioculcas"
+            "Tanaman Hias",
+            "Alat menanam",
+            "Pupuk",
+            "Lain-lain"
     };
 }
-
-/*
-* menit 24.00
-*/
