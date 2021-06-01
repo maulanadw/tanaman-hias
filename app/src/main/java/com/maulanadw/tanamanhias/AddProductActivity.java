@@ -3,8 +3,10 @@ package com.maulanadw.tanamanhias;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.Manifest;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -28,7 +30,7 @@ public class AddProductActivity extends AppCompatActivity {
     private static final int IMAGE_PICK_GALLERY_CODE = 400;
     private static final int IMAGE_PICK_CAMERA_CODE = 500;
 
-    // izin dalam arrays
+    // permission dalam arrays
     private String[] izinKamera;
     private String[] izinPenyimpanan;
 
@@ -51,5 +53,20 @@ public class AddProductActivity extends AppCompatActivity {
         etHargaDiskon = findViewById(R.id.etHargaDiskon);
         etHargaDiskonPersen = findViewById(R.id.etHargaDiskonPersen);
         btnTambah = findViewById(R.id.btnTambah);
+
+        // inisialisasi permission arrays
+        izinKamera = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        izinPenyimpanan = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+        ivIconProduk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // tampilkan dialog untuk memilih gambar
+                tampilDialogPilihGambar();
+            }
+        });
+    }
+
+    private void tampilDialogPilihGambar() {
     }
 }
