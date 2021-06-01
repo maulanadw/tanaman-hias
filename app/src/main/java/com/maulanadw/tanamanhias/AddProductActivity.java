@@ -3,6 +3,7 @@ package com.maulanadw.tanamanhias;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,21 @@ public class AddProductActivity extends AppCompatActivity {
     private TextView tvKategoriProduk, etBerat, etHarga, etHargaDiskon, etHargaDiskonPersen;
     private SwitchCompat diskonSwitch;
     private Button btnTambah;
+
+    // membuat permission constants
+    private static final int CAMERA_REQUEST_CODE = 200;
+    private static final int STORAGE_REQUEST_CODE = 300;
+
+    // constanta untuk ambil gambar
+    private static final int IMAGE_PICK_GALLERY_CODE = 400;
+    private static final int IMAGE_PICK_CAMERA_CODE = 500;
+
+    // izin dalam arrays
+    private String[] izinKamera;
+    private String[] izinPenyimpanan;
+
+    // uri, gambar dipilih
+    private Uri image_uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
