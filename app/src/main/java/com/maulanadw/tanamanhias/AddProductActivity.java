@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.Manifest;
+import android.content.ContentValues;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -68,5 +71,27 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     private void tampilDialogPilihGambar() {
+    }
+
+    private void ambilDariGaleri(){
+        // intent untuk mengambil gambar dari galeri
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, IMAGE_PICK_GALLERY_CODE);
+    }
+
+    private void ambilDariKamera(){
+        // intent untuk mengambil gambar dari kamera
+
+        // gunakan media penyimpanan untuk mengambil gambar
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MediaStore.Images.Media.TITLE,"temp_image_title");
+        contentValues.put(MediaStore.Images.Media.DESCRIPTION,"temp_image_description");
+
+        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
+        startActivityForResult(intent, IMAGE_PICK_CAMERA_CODE);
     }
 }
