@@ -45,7 +45,7 @@
             app:c_border_width="1dp"/>
 
         <EditText
-            android:id="@+id/etJudulProduk"
+            android:id="@+id/etNamaProduk"
             android:layout_below="@+id/ivIconProduk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
 
         <EditText
             android:id="@+id/etDeskripsiProduk"
-            android:layout_below="@+id/etJudulProduk"
+            android:layout_below="@+id/etNamaProduk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -85,7 +85,7 @@
             android:hint="Kategori"/>
 
         <EditText
-            android:id="@+id/etBerat"
+            android:id="@+id/etJumlahProduk"
             android:layout_below="@+id/tvKategoriProduk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,11 +95,11 @@
             android:drawablePadding="10dp"
             android:padding="10dp"
             android:inputType="textCapWords"
-            android:hint="Berat (gram/ kilogram)"/>
+            android:hint="Jumlah Produk"/>
 
         <EditText
-            android:id="@+id/etHarga"
-            android:layout_below="@+id/etBerat"
+            android:id="@+id/etHargaUtama"
+            android:layout_below="@+id/etJumlahProduk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -116,8 +116,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_below="@id/etHarga"
-            android:text="Sedang diskon"/>
+            android:layout_below="@id/etHargaUtama"
+            android:text="Aktifkan Diskon"/>
 
         <EditText
             android:id="@+id/etHargaDiskon"

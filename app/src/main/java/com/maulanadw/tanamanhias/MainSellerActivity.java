@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,9 +29,10 @@ import java.util.HashMap;
 
 public class MainSellerActivity extends AppCompatActivity {
 
-    private TextView tvNama, tvNamaToko, tvEmail;
+    private TextView tvNama, tvNamaToko, tvEmail, tvTabProduk, tvTabOrder;
     private ImageButton btnLogout, btnEditProfil, btnTambahProduk;
     private ImageView ivProfil;
+    private RelativeLayout rlProduk, rlOrder;
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -43,16 +45,22 @@ public class MainSellerActivity extends AppCompatActivity {
         tvNama = findViewById(R.id.tvNama);
         tvNamaToko = findViewById(R.id.tvNamaToko);
         tvEmail = findViewById(R.id.tvEmail);
+        tvTabProduk = findViewById(R.id.tvTabProduk);
+        tvTabOrder = findViewById(R.id.tvTabOrder);
         btnLogout = findViewById(R.id.btnLogout);
         btnEditProfil = findViewById(R.id.btnEditProfil);
         btnTambahProduk = findViewById(R.id.btnTambahProduk);
         ivProfil = findViewById(R.id.ivProfil);
+        rlProduk = findViewById(R.id.rlProduk);
+        rlOrder = findViewById(R.id.rlOrder);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Tunggu sebentar");
         progressDialog.setCanceledOnTouchOutside(false);
         firebaseAuth = FirebaseAuth.getInstance();
         cekUser();
+
+        tampilkanProduk();
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +87,45 @@ public class MainSellerActivity extends AppCompatActivity {
             }
         });
 
+        tvTabProduk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // load produk
+                tampilkanProduk();
+            }
+        });
+
+        tvTabOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // load order
+                tampilkanOrder();
+            }
+        });
+
+    }
+
+    private void tampilkanProduk() {
+        // tampilkan produk dan sembunyikan tampilan order
+        rlProduk.setVisibility(View.VISIBLE);
+        rlOrder.setVisibility(View.GONE);
+
+        tvTabProduk.setTextColor(getResources().getColor(R.color.black));
+        tvTabProduk.setBackgroundResource(R.drawable.shape_rectangle3);
+
+        tvTabOrder.setTextColor(getResources().getColor(R.color.white));
+        tvTabOrder.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+    }
+    private void tampilkanOrder() {
+        // tampilkan order dan sembunyikan tampilan produk
+        rlProduk.setVisibility(View.GONE);
+        rlOrder.setVisibility(View.VISIBLE);
+
+        tvTabProduk.setTextColor(getResources().getColor(R.color.white));
+        tvTabProduk.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        tvTabOrder.setTextColor(getResources().getColor(R.color.black));
+        tvTabOrder.setBackgroundResource(R.drawable.shape_rectangle3);
     }
 
     private void buatSayaOffline() {

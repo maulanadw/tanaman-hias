@@ -8,6 +8,7 @@
 
     <!-- Toolbar -->
     <RelativeLayout
+        android:id="@+id/rlToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -72,6 +73,55 @@
             android:layout_below="@+id/tvNamaToko"
             android:text="Email"
             android:textColor="@color/white"/>
+
+        <!-- Tab: Produk, Order -->
+        <LinearLayout
+            android:layout_below="@+id/ivProfil"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_rectangle2">
+
+            <!-- Produk -->
+            <TextView
+                android:id="@+id/tvTabProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Produk"
+                android:textColor="@color/black"
+                android:background="@drawable/shape_rectangle3"/>
+            <!-- Order -->
+            <TextView
+                android:id="@+id/tvTabOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Order"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Menu Produk -->
+    <RelativeLayout
+        android:id="@+id/rlProduk"
+        android:layout_below="@id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+    <!-- Menu Order -->
+    <RelativeLayout
+        android:id="@+id/rlOrder"
+        android:layout_below="@id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     </RelativeLayout>
 
