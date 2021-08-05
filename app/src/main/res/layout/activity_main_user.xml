@@ -8,35 +8,167 @@
 
     <!-- Toolbar -->
     <RelativeLayout
+        android:id="@+id/rlToolbar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:background="@drawable/shape_rectangle">
-
-        <TextView
-            android:id="@+id/tvNama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-black"
-            android:text="Nama"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/btnLogout"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_logout_white"
+            android:src="@drawable/ic_signout"
             android:layout_alignParentEnd="true"
             android:background="@null"/>
         <ImageButton
             android:id="@+id/btnEditProfil"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_edit_white"
+            android:src="@drawable/ic_editprofil"
             android:layout_toStartOf="@id/btnLogout"
             android:background="@null"/>
+        <ImageButton
+            android:id="@+id/btnAds"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_ads"
+            android:layout_toStartOf="@id/btnEditProfil"
+            android:background="@null"/>
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/ivProfil"
+            app:c_border="true"
+            app:c_border_color="@color/white"
+            android:src="@drawable/ic_person_gray"/>
+
+        <TextView
+            android:id="@+id/tvHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Hi, "
+            android:layout_toEndOf="@id/ivProfil"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Nama"
+            android:layout_toEndOf="@id/tvHello"
+            android:textColor="@color/white" />
+
+        <!--
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Nama"
+            android:layout_toEndOf="@id/ivProfil"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivProfil"
+            android:layout_below="@+id/tvNama"
+            android:text="Email"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvNoHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivProfil"
+            android:layout_below="@+id/tvEmail"
+            android:text="No. HP"
+            android:textColor="@color/white"/>
+        -->
+
+        <!-- Reward AdMob -->
+        <!-- <TextView
+            android:id="@+id/tvCount"
+            android:layout_below="@id/tvNoHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivProfil"
+            android:text="Your reward is : "
+            android:textColor="@color/yellow"/> -->
+        <!-- <TextView
+            android:id="@+id/tvAdMob"
+            android:layout_below="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/yellow"/> -->
+
+        <!-- Tab: Toko, Order -->
+        <LinearLayout
+            android:layout_below="@+id/ivProfil"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_rectangle2">
+
+            <!-- Toko -->
+            <TextView
+                android:id="@+id/tvTabToko"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Toko"
+                android:textColor="@color/black"
+                android:background="@drawable/shape_rectangle3"
+                android:fontFamily="@font/montserrat_regular"/>
+            <!-- Order -->
+            <TextView
+                android:id="@+id/tvTabOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Order"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_regular"/>
+
+        </LinearLayout>
+
     </RelativeLayout>
+
+    <!-- Tampilan toko -->
+    <RelativeLayout
+        android:id="@+id/rlToko"
+        android:layout_below="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvToko"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_shop"/>
+
+        <RelativeLayout
+            android:id="@+id/rlOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-2dp">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Tampilan order -->
 
 </RelativeLayout>

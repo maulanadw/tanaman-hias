@@ -44,7 +44,7 @@ public class AddProductActivity extends AppCompatActivity {
     private ImageButton btnKembali;
     private ImageView ivIconProduk;
     private EditText etNamaProduk, etDeskripsiProduk;
-    private TextView tvKategoriProduk, etJumlahProduk, etHargaUtama, etHargaDiskon, etHargaDiskonPersen;
+    private TextView tvKategoriProduk, etJumlahProduk, etHargaUtama, etHargaDiskon, etDiskonPersen;
     private SwitchCompat diskonSwitch;
     private Button btnTambahProduk;
 
@@ -72,7 +72,7 @@ public class AddProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
 
-        btnKembali = findViewById(R.id.btnKembali);
+        //btnKembali = findViewById(R.id.btnKembali);
         ivIconProduk = findViewById(R.id.ivIconProduk);
         etNamaProduk = findViewById(R.id.etNamaProduk);
         etDeskripsiProduk = findViewById(R.id.etDeskripsiProduk);
@@ -81,12 +81,12 @@ public class AddProductActivity extends AppCompatActivity {
         etHargaUtama = findViewById(R.id.etHargaUtama);
         diskonSwitch = findViewById(R.id.diskonSwitch);
         etHargaDiskon = findViewById(R.id.etHargaDiskon);
-        etHargaDiskonPersen = findViewById(R.id.etHargaDiskonPersen);
+        etDiskonPersen = findViewById(R.id.etDiskonPersen);
         btnTambahProduk = findViewById(R.id.btnTambah);
 
         // tidak diceklis, jangan tampilkan etHargaDiskon dan etHargaDiskonPersen
         etHargaDiskon.setVisibility(View.GONE);
-        etHargaDiskonPersen.setVisibility(View.GONE);
+        etDiskonPersen.setVisibility(View.GONE);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -110,21 +110,23 @@ public class AddProductActivity extends AppCompatActivity {
                 if (isChecked){
                     // diceklis, tampilkan etHargaDiskon dan etHargaDiskonPersen
                     etHargaDiskon.setVisibility(View.VISIBLE);
-                    etHargaDiskonPersen.setVisibility(View.VISIBLE);
+                    etDiskonPersen.setVisibility(View.VISIBLE);
                 } else {
                     // tidak diceklis, jangan tampilkan etHargaDiskon dan etHargaDiskonPersen
                     etHargaDiskon.setVisibility(View.GONE);
-                    etHargaDiskonPersen.setVisibility(View.GONE);
+                    etDiskonPersen.setVisibility(View.GONE);
                 }
             }
         });
 
+        /*
         btnKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+         */
 
         ivIconProduk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,7 +159,7 @@ public class AddProductActivity extends AppCompatActivity {
 
     }
 
-    private String namaProduk, deskripsiProduk,kategoriProduk, banyakProduk, hargaUtama, hargaDiskon, catatanDiskon;
+    private String namaProduk, deskripsiProduk,kategoriProduk, banyakProduk, hargaUtama, hargaDiskon, diskonPersen;
     private boolean diskonTersedia = false;
     private void inputData() {
         // input data
@@ -170,7 +172,7 @@ public class AddProductActivity extends AppCompatActivity {
 
         // validasi data
         if (TextUtils.isEmpty(namaProduk)){
-            etNamaProduk.setError("Nama Produk tidak boleh kosong.");
+            etNamaProduk.setError("Nama produk tidak boleh kosong");
 
             /*
             Toast.makeText(this, "Nama Produk tidak boleh kosong.", Toast.LENGTH_SHORT).show();
@@ -178,22 +180,22 @@ public class AddProductActivity extends AppCompatActivity {
             */
         }
         if (TextUtils.isEmpty(kategoriProduk)){
-            tvKategoriProduk.setError("Kategori Produk tidak boleh kosong.");
+            tvKategoriProduk.setError("Kategori produk tidak boleh kosong");
         }
         if (TextUtils.isEmpty(hargaUtama)){
-            etHargaUtama.setError("Harga Produk tidak boleh kosong.");
+            etHargaUtama.setError("Harga produk tidak boleh kosong");
         }
         if (diskonTersedia){
             // produk dengan diskon
             hargaDiskon = etHargaDiskon.getText().toString().trim();
-            catatanDiskon = etHargaDiskonPersen.getText().toString().trim();
+            diskonPersen = etDiskonPersen.getText().toString().trim();
             if (TextUtils.isEmpty(hargaDiskon)){
                 etHargaUtama.setError("Harga Produk tidak boleh kosong.");
             }
         } else {
             // produk tanpa diskon
             hargaDiskon = "0";
-            catatanDiskon = "";
+            diskonPersen = "";
         }
 
         tambahProduk();
@@ -219,7 +221,7 @@ public class AddProductActivity extends AppCompatActivity {
             hashMap.put("iconProduk", "");
             hashMap.put("hargaUtama", "" + hargaUtama);
             hashMap.put("hargaDiskon", "" + hargaDiskon);
-            hashMap.put("diskon", "" + catatanDiskon);
+            hashMap.put("diskonPersen", "" + diskonPersen);
             hashMap.put("diskonTersedia", "" + diskonTersedia);
             hashMap.put("timeStamp", "" + timeStamp);
             hashMap.put("uid", "" + firebaseAuth.getUid());
@@ -232,7 +234,7 @@ public class AddProductActivity extends AppCompatActivity {
                         public void onSuccess(Void aVoid) {
                             // tambahkan ke database
                             progressDialog.dismiss();
-                            Toast.makeText(AddProductActivity.this, "Produk telah ditambahkan.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddProductActivity.this, "Produk ditambahkan", Toast.LENGTH_SHORT).show();
                             clearData();
                         }
                     })
@@ -275,7 +277,7 @@ public class AddProductActivity extends AppCompatActivity {
                                 hashMap.put("iconProduk", "" + downloadImageUri);
                                 hashMap.put("hargaUtama", "" + hargaUtama);
                                 hashMap.put("hargaDiskon", "" + hargaDiskon);
-                                hashMap.put("diskon", "" + catatanDiskon);
+                                hashMap.put("diskonPersen", "" + diskonPersen);
                                 hashMap.put("diskonTersedia", "" + diskonTersedia);
                                 hashMap.put("timeStamp", "" + timeStamp);
                                 hashMap.put("uid", "" + firebaseAuth.getUid());
@@ -288,7 +290,7 @@ public class AddProductActivity extends AppCompatActivity {
                                             public void onSuccess(Void aVoid) {
                                                 // tambahkan ke database
                                                 progressDialog.dismiss();
-                                                Toast.makeText(AddProductActivity.this, "Produk telah ditambahkan.", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(AddProductActivity.this, "Produk telah ditambahkan", Toast.LENGTH_SHORT).show();
                                                 clearData();
                                             }
                                         })
@@ -323,8 +325,8 @@ public class AddProductActivity extends AppCompatActivity {
         etJumlahProduk.setText("");
         etHargaUtama.setText("");
         etHargaDiskon.setText("");
-        etHargaDiskonPersen.setText("");
-        ivIconProduk.setImageResource(R.drawable.ic_add_shopping_cart_primary);
+        etDiskonPersen.setText("");
+        ivIconProduk.setImageResource(R.drawable.ic_product_gray);
         image_uri = null;
     }
 

@@ -1,13 +1,13 @@
 package com.maulanadw.tanamanhias;
 
 public class ModelProduct {
-    private String idProduk, namaProduk, deskripsiProduk, kategoriProduk, jumlahProduk, iconProduk, hargaUtama, hargaDiskon, diskon, diskonTersedia, timeStamp, uid;
+    private String idProduk, namaProduk, deskripsiProduk, kategoriProduk, jumlahProduk, iconProduk, hargaUtama, hargaDiskon, diskonPersen, diskonTersedia, timeStamp, uid;
 
     public ModelProduct() {
 
     }
 
-    public ModelProduct(String idProduk, String namaProduk, String deskripsiProduk, String kategoriProduk, String jumlahProduk, String iconProduk, String hargaUtama, String hargaDiskon, String diskon, String diskonTersedia, String timeStamp, String uid) {
+    public ModelProduct(String idProduk, String namaProduk, String deskripsiProduk, String kategoriProduk, String jumlahProduk, String iconProduk, String hargaUtama, String hargaDiskon, String diskonPersen, String diskonTersedia, String timeStamp, String uid) {
         this.idProduk = idProduk;
         this.namaProduk = namaProduk;
         this.deskripsiProduk = deskripsiProduk;
@@ -16,7 +16,7 @@ public class ModelProduct {
         this.iconProduk = iconProduk;
         this.hargaUtama = hargaUtama;
         this.hargaDiskon = hargaDiskon;
-        this.diskon = diskon;
+        this.diskonPersen = diskonPersen;
         this.diskonTersedia = diskonTersedia;
         this.timeStamp = timeStamp;
         this.uid = uid;
@@ -86,12 +86,12 @@ public class ModelProduct {
         this.hargaDiskon = hargaDiskon;
     }
 
-    public String getDiskon() {
-        return diskon;
+    public String getDiskonPersen() {
+        return diskonPersen;
     }
 
-    public void setDiskon(String diskon) {
-        this.diskon = diskon;
+    public void setDiskonPersen(String diskonPersen) {
+        this.diskonPersen = diskonPersen;
     }
 
     public String getDiskonTersedia() {

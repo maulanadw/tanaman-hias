@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".EditProductActivity">
+
+    <!-- Toolbar -->
+    <!--
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="@drawable/shape_rectangle">
+        <ImageButton
+            android:id="@+id/btnKembali"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_white"
+            android:background="@null"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Edit Produk"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+     -->
+
+    <!-- Form untuk input data -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/buat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubah"
+            android:textSize="30sp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#403E3E"/>
+
+        <TextView
+            android:id="@+id/akunbaru"
+            android:layout_below="@id/buat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="produk penjualan."
+            android:textSize="30sp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#403E3E"/>
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/ivIconProduk"
+            android:layout_below="@id/akunbaru"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_product_gray"
+            app:c_border="true"
+            app:c_border_color="@color/primary_color_test"
+            app:c_border_width="1dp"/>
+
+        <EditText
+            android:id="@+id/etNamaProduk"
+            android:layout_below="@+id/ivIconProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_productname"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textPersonName|textCapWords"
+            android:hint="Nama Produk"
+            android:fontFamily="@font/montserrat_extralight"/>
+
+        <EditText
+            android:id="@+id/etDeskripsiProduk"
+            android:layout_below="@+id/etNamaProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_title_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:hint="Deskripsi"
+            android:fontFamily="@font/montserrat_extralight"/>
+
+        <TextView
+            android:id="@+id/tvKategoriProduk"
+            android:layout_below="@+id/etDeskripsiProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_categories_gray"
+            android:drawableEnd="@drawable/ic_down_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:hint="Kategori"
+            android:textSize="19sp"
+            android:fontFamily="@font/montserrat_extralight"/>
+
+        <EditText
+            android:id="@+id/etJumlahProduk"
+            android:layout_below="@+id/tvKategoriProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_totalproduct"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapWords"
+            android:hint="Jumlah Produk"
+            android:fontFamily="@font/montserrat_extralight"/>
+
+        <EditText
+            android:id="@+id/etHargaUtama"
+            android:layout_below="@+id/etJumlahProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_money_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Harga"
+            android:fontFamily="@font/montserrat_extralight"/>
+
+        <!-- Diskon produk atau tidak? -->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/diskonSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/etHargaUtama"
+            android:text="Diskon"
+            android:fontFamily="@font/montserrat_regular"/>
+
+        <EditText
+            android:id="@+id/etHargaDiskon"
+            android:layout_below="@+id/diskonSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_money_gray"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="numberDecimal"
+            android:hint="Harga Diskon"
+            android:fontFamily="@font/montserrat_extralight"/>
+
+        <EditText
+            android:id="@+id/etDiskonPersen"
+            android:layout_below="@+id/etHargaDiskon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_discount"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="textCapSentences"
+            android:hint="misal : 10% OFF"
+            android:fontFamily="@font/montserrat_extralight"/>
+
+        <Button
+            android:id="@+id/btnUpdateProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_below="@id/etDiskonPersen"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:minWidth="150dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/btn_custom"
+            android:fontFamily="@font/montserrat_semibold" />
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

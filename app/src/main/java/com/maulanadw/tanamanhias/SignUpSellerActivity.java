@@ -84,7 +84,7 @@ public class SignUpSellerActivity extends AppCompatActivity implements LocationL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_seller);
 
-        btnKembali = findViewById(R.id.btnKembali);
+        //btnKembali = findViewById(R.id.btnKembali);
         btnGps = findViewById(R.id.btnGps);
         ivProfil = findViewById(R.id.ivProfil);
         etNama = findViewById(R.id.etNama);
@@ -110,12 +110,14 @@ public class SignUpSellerActivity extends AppCompatActivity implements LocationL
         progressDialog.setTitle("Tunggu sebentar");
         progressDialog.setCanceledOnTouchOutside(false);
 
+        /*
         btnKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+         */
 
         btnGps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,10 +183,13 @@ public class SignUpSellerActivity extends AppCompatActivity implements LocationL
             Toast.makeText(this, "Masukkan Biaya Pengiriman.", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (latitude == 0.0 || longitude == 0.0){
+
+        /*
+        * if (latitude == 0.0 || longitude == 0.0){
             Toast.makeText(this, "Isi Alamat anda atau klik tombol GPS di kanan atas.", Toast.LENGTH_SHORT).show();
             return;
         }
+        * */
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(this, "Email tidak valid.", Toast.LENGTH_SHORT).show();
             return;

@@ -13,7 +13,8 @@
         tools:context=".SignUpUserActivity">
 
     <!-- Toolbar -->
-    <RelativeLayout
+    <!--
+     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:padding="10dp"
@@ -44,28 +45,50 @@
             android:background="@null"/>
 
     </RelativeLayout>
+     -->
+        <ImageButton
+            android:id="@+id/btnGps"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_gps_white"
+            android:layout_alignParentEnd="true"
+            android:background="@color/gray"/>
 
-    <ImageView
-        android:id="@+id/iconIv"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/shape_circle"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/ic_key_white"
-        android:padding="5dp"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/buat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat"
+            android:textSize="30sp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#403E3E"/>
+
+        <TextView
+            android:id="@+id/akunbaru"
+            android:layout_below="@id/buat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="akun baru."
+            android:textSize="30sp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="#403E3E"/>
 
     <com.blogspot.atifsoftwares.circularimageview.CircularImageView
         android:id="@+id/ivProfil"
-        android:layout_below="@+id/iconIv"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         app:c_border="true"
-        app:c_border_color="@color/primary_color"
+        app:c_border_color="@color/primary_color_test"
         app:c_border_width="1dp"
-        android:src="@drawable/ic_person_gray"/>
+        android:src="@drawable/ic_person_gray"
+        android:layout_below="@id/akunbaru"/>
 
     <EditText
         android:id="@+id/etNama"
@@ -78,7 +101,8 @@
         android:layout_margin="5dp"
         android:inputType="textPersonName|textCapWords"
         android:background="@drawable/shape_rectangle1"
-        android:drawableStart="@drawable/ic_person_gray"/>
+        android:drawableStart="@drawable/ic_person_gray"
+        android:fontFamily="@font/montserrat_extralight"/>
 
     <EditText
         android:id="@+id/etNoHp"
@@ -91,14 +115,16 @@
         android:layout_margin="5dp"
         android:inputType="phone"
         android:maxLength="12"
-        android:background="@drawable/shape_rectangle1"/>
+        android:background="@drawable/shape_rectangle1"
+        android:fontFamily="@font/montserrat_extralight"
+        android:drawableStart="@drawable/ic_numberphone"/>
 
     <LinearLayout
         android:id="@+id/llAlamat"
         android:layout_below="@+id/etNoHp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/etProvinsi"
@@ -111,7 +137,8 @@
             android:layout_margin="5dp"
             android:inputType="textPostalAddress"
             android:layout_weight="1"
-            android:background="@drawable/shape_rectangle1"/>
+            android:background="@drawable/shape_rectangle1"
+            android:fontFamily="@font/montserrat_extralight"/>
 
         <EditText
             android:id="@+id/etKabupaten"
@@ -124,7 +151,8 @@
             android:layout_margin="5dp"
             android:inputType="textPostalAddress"
             android:layout_weight="1"
-            android:background="@drawable/shape_rectangle1"/>
+            android:background="@drawable/shape_rectangle1"
+            android:fontFamily="@font/montserrat_extralight"/>
 
         <EditText
             android:id="@+id/etKota"
@@ -137,7 +165,8 @@
             android:layout_margin="5dp"
             android:inputType="textPostalAddress"
             android:layout_weight="1"
-            android:background="@drawable/shape_rectangle1"/>
+            android:background="@drawable/shape_rectangle1"
+            android:fontFamily="@font/montserrat_extralight"/>
     </LinearLayout>
 
     <EditText
@@ -150,7 +179,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:inputType="textPostalAddress|textMultiLine"
-        android:background="@drawable/shape_rectangle1"/>
+        android:background="@drawable/shape_rectangle1"
+        android:drawableStart="@drawable/ic_address"
+        android:fontFamily="@font/montserrat_extralight"/>
 
     <EditText
         android:id="@+id/etEmail"
@@ -163,7 +194,8 @@
         android:layout_margin="5dp"
         android:inputType="textEmailAddress"
         android:background="@drawable/shape_rectangle1"
-        android:drawableStart="@drawable/ic_mail_gray"/>
+        android:drawableStart="@drawable/ic_mail_gray"
+        android:fontFamily="@font/montserrat_extralight"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -177,7 +209,8 @@
         android:inputType="textPassword"
         android:maxLength="12"
         android:background="@drawable/shape_rectangle1"
-        android:drawableStart="@drawable/ic_lock_gray"/>
+        android:drawableStart="@drawable/ic_lock_gray"
+        android:fontFamily="@font/montserrat_extralight"/>
 
     <EditText
         android:id="@+id/etKonfirmasiPassword"
@@ -191,19 +224,34 @@
         android:inputType="textPassword"
         android:maxLength="12"
         android:background="@drawable/shape_rectangle1"
-        android:drawableStart="@drawable/ic_lock_gray"/>
+        android:drawableStart="@drawable/ic_lock_gray"
+        android:fontFamily="@font/montserrat_extralight"/>
 
     <Button
         android:id="@+id/btnDaftar"
         android:layout_below="@+id/etKonfirmasiPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         android:text="Daftar"
         style="@style/Widget.AppCompat.Button.Colored"
         android:minWidth="120dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_custom"
+        android:fontFamily="@font/montserrat_semibold"/>
 
+        <TextView
+            android:id="@+id/tvDaftarPenjual"
+            android:layout_below="@+id/btnDaftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Register"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_medium" />
+
+        <!--
         <TextView
             android:id="@+id/tvDaftarPenjual"
             android:layout_width="wrap_content"
@@ -215,7 +263,21 @@
             android:layout_marginTop="60dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:text="Ingin menjadi penjual? Daftar disini" />
+            android:text="Daftar" />
+
+        <TextView
+            android:id="@+id/tvDP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnDaftar"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Ingin jadi penjual?" />
+        -->
 
     </RelativeLayout>
 

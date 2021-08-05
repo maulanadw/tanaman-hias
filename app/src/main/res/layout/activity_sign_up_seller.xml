@@ -8,7 +8,9 @@
     tools:context=".SignUpSellerActivity">
 
     <!-- Toolbar -->
-    <RelativeLayout
+    <!--
+     <RelativeLayout
+        android:id="@+id/rlToolbar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:padding="10dp"
@@ -26,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-black"
-            android:text="Daftar Baru Akun Seller"
+            android:text="Register Akun Seller"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -39,32 +41,56 @@
             android:background="@null"/>
 
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/iconIv"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/shape_circle"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/ic_key_white"
-        android:padding="5dp"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true" />
+     -->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iconIv">
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btnGps"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_gps_white"
+                android:layout_alignParentEnd="true"
+                android:background="@color/gray"/>
+
+            <TextView
+                android:id="@+id/buat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buat"
+                android:textSize="30sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="#403E3E"/>
+
+            <TextView
+                android:id="@+id/akunbaru"
+                android:layout_below="@id/buat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="akun seller."
+                android:textSize="30sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="#403E3E"/>
+
             <com.blogspot.atifsoftwares.circularimageview.CircularImageView
                 android:id="@+id/ivProfil"
+                android:layout_below="@id/akunbaru"
+                android:layout_marginTop="10dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 app:c_border="true"
-                app:c_border_color="@color/primary_color"
+                app:c_border_color="@color/primary_color_test"
                 app:c_border_width="1dp"
                 android:src="@drawable/ic_person_gray"/>
 
@@ -79,7 +105,8 @@
                 android:layout_margin="5dp"
                 android:inputType="textPersonName|textCapWords"
                 android:background="@drawable/shape_rectangle1"
-                android:drawableStart="@drawable/ic_person_gray"/>
+                android:drawableStart="@drawable/ic_person_gray"
+                android:fontFamily="@font/montserrat_extralight"/>
 
             <EditText
                 android:id="@+id/etNamaToko"
@@ -92,7 +119,8 @@
                 android:layout_margin="5dp"
                 android:inputType="textPersonName|textCapWords"
                 android:background="@drawable/shape_rectangle1"
-                android:drawableStart="@drawable/ic_store_gray"/>
+                android:drawableStart="@drawable/ic_store_gray"
+                android:fontFamily="@font/montserrat_extralight"/>
 
             <EditText
                 android:id="@+id/etNoHp"
@@ -108,7 +136,9 @@
                 android:hint="Nomor HP"
                 android:inputType="phone"
                 android:maxLength="12"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:fontFamily="@font/montserrat_extralight"
+                android:drawableStart="@drawable/ic_numberphone"/>
 
             <EditText
                 android:id="@+id/etOngkosKirim"
@@ -120,14 +150,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:inputType="numberDecimal"
-                android:background="@drawable/shape_rectangle1"/>
+                android:background="@drawable/shape_rectangle1"
+                android:fontFamily="@font/montserrat_extralight"
+                android:drawableStart="@drawable/ic_deliveryfee"/>
 
             <LinearLayout
                 android:id="@+id/llAlamat"
                 android:layout_below="@+id/etOngkosKirim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/etProvinsi"
@@ -140,7 +172,8 @@
                     android:layout_margin="5dp"
                     android:inputType="textPostalAddress"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rectangle1"/>
+                    android:background="@drawable/shape_rectangle1"
+                    android:fontFamily="@font/montserrat_extralight"/>
 
                 <EditText
                     android:id="@+id/etKabupaten"
@@ -153,7 +186,8 @@
                     android:layout_margin="5dp"
                     android:inputType="textPostalAddress"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rectangle1"/>
+                    android:background="@drawable/shape_rectangle1"
+                    android:fontFamily="@font/montserrat_extralight"/>
 
                 <EditText
                     android:id="@+id/etKota"
@@ -166,7 +200,8 @@
                     android:layout_margin="5dp"
                     android:inputType="textPostalAddress"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rectangle1"/>
+                    android:background="@drawable/shape_rectangle1"
+                    android:fontFamily="@font/montserrat_extralight"/>
             </LinearLayout>
 
             <EditText
@@ -179,7 +214,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:inputType="textPostalAddress|textMultiLine"
-                android:background="@drawable/shape_rectangle1"/>
+                android:background="@drawable/shape_rectangle1"
+                android:drawableStart="@drawable/ic_address"
+                android:fontFamily="@font/montserrat_extralight"/>
 
             <EditText
                 android:id="@+id/etEmail"
@@ -192,7 +229,8 @@
                 android:layout_margin="5dp"
                 android:inputType="textEmailAddress"
                 android:background="@drawable/shape_rectangle1"
-                android:drawableStart="@drawable/ic_mail_gray"/>
+                android:drawableStart="@drawable/ic_mail_gray"
+                android:fontFamily="@font/montserrat_extralight"/>
 
             <EditText
                 android:id="@+id/etPassword"
@@ -206,7 +244,8 @@
                 android:inputType="textPassword"
                 android:maxLength="12"
                 android:background="@drawable/shape_rectangle1"
-                android:drawableStart="@drawable/ic_lock_gray"/>
+                android:drawableStart="@drawable/ic_lock_gray"
+                android:fontFamily="@font/montserrat_extralight"/>
 
             <EditText
                 android:id="@+id/etKonfirmasiPassword"
@@ -220,7 +259,8 @@
                 android:inputType="textPassword"
                 android:maxLength="12"
                 android:background="@drawable/shape_rectangle1"
-                android:drawableStart="@drawable/ic_lock_gray"/>
+                android:drawableStart="@drawable/ic_lock_gray"
+                android:fontFamily="@font/montserrat_extralight"/>
 
             <Button
                 android:id="@+id/btnDaftar"
@@ -229,9 +269,11 @@
                 android:layout_height="wrap_content"
                 android:text="Daftar"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:minWidth="120dp"
-                android:layout_marginTop="30dp"
-                android:layout_centerHorizontal="true" />
+                android:minWidth="150dp"
+                android:layout_marginTop="35dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/btn_custom"
+                android:fontFamily="@font/montserrat_semibold"/>
 
         </RelativeLayout>
     </ScrollView>

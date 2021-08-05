@@ -49,6 +49,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import static android.text.Html.fromHtml;
+
 public class SignUpUserActivity extends AppCompatActivity implements LocationListener {
 
     private ImageButton btnKembali, btnGps;
@@ -86,7 +88,7 @@ public class SignUpUserActivity extends AppCompatActivity implements LocationLis
         setContentView(R.layout.activity_sign_up_user);
 
         // Inisialisasi tampilan views
-        btnKembali = findViewById(R.id.btnKembali);
+        //btnKembali = findViewById(R.id.btnKembali);
         btnGps = findViewById(R.id.btnGps);
         ivProfil = findViewById(R.id.ivProfil);
         etNama = findViewById(R.id.etNama);
@@ -111,12 +113,17 @@ public class SignUpUserActivity extends AppCompatActivity implements LocationLis
         progressDialog.setTitle("Tunggu sebentar");
         progressDialog.setCanceledOnTouchOutside(false);
 
+        tvDaftarPenjual.setText(fromHtml("Ingin menjadi seller? " +
+                "</font><font color='#00B14F'>Daftar.</font>"));
+
+        /*
         btnKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+         */
 
         btnGps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,10 +188,12 @@ public class SignUpUserActivity extends AppCompatActivity implements LocationLis
             Toast.makeText(this, "Masukkan Nomor HP.", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (latitude == 0.0 || longitude == 0.0){
+        /*
+         * if (latitude == 0.0 || longitude == 0.0){
             Toast.makeText(this, "Isi Alamat anda atau klik tombol GPS di kanan atas.", Toast.LENGTH_SHORT).show();
             return;
         }
+         */
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(this, "Email tidak valid.", Toast.LENGTH_SHORT).show();
             return;
@@ -416,7 +425,7 @@ public class SignUpUserActivity extends AppCompatActivity implements LocationLis
     }
 
     private void deteksiLokasi(){
-        Toast.makeText(this, "Tunggu sebentar . . .", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Tunggu sebentar", Toast.LENGTH_LONG).show();
 
         kelolaLokasi = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         kelolaLokasi.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0, this);

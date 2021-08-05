@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopDetailsActivity">
+
+    <!-- Detail Toko -->
+    <RelativeLayout
+        android:id="@+id/rlShop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/ivToko"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/gray2"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="#79000000"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvNamaToko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:text="Nama Toko"
+                android:textColor="@color/white"
+                android:layout_margin="3dp"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+            <!--
+            <TextView
+                android:id="@+id/tvNoHP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNamaToko"
+                android:text="No. HP"
+                android:textColor="@color/white"
+                android:layout_marginStart="3dp"/>
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNoHP"
+                android:text="Email"
+                android:textColor="@color/white"
+                android:layout_marginStart="3dp"/>
+            -->
+
+            <TextView
+                android:id="@+id/tvOpenClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buka"
+                android:layout_alignParentEnd="true"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:layout_marginStart="3dp"/>
+
+            <TextView
+                android:id="@+id/tvOngkosKirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ongkos Kirim"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="55dp"
+                android:layout_below="@+id/tvOpenClose"
+                android:textColor="@color/white"
+                android:layout_marginStart="3dp"/>
+
+            <TextView
+                android:id="@+id/tvAlamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                android:layout_below="@+id/tvNamaToko"
+                android:textColor="@color/white"
+                android:layout_marginStart="3dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_call_white"
+                    android:background="@null"/>
+
+                <ImageButton
+                    android:id="@+id/btnMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_map_white"
+                    android:background="@null"
+                    android:layout_marginStart="5dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rectangle"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/btnKeranjang"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:src="@drawable/ic_cart_white"/>
+
+        <!-- Filter Produk -->
+        <ImageButton
+            android:id="@+id/btnFilterProduk"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_filterwhite"
+            android:layout_toStartOf="@id/btnKeranjang"
+            android:background="@null"/>
+
+        <!--
+        <ImageButton
+            android:id="@+id/btnKembali"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:src="@drawable/ic_back_white"/>
+        -->
+
+        <!-- Cari -->
+        <EditText
+            android:id="@+id/etCariProduk"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_search_gray"
+            android:drawablePadding="10dp"
+            android:hint="Cari"
+            android:padding="10dp" />
+
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Detail Toko"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        -->
+
+    </RelativeLayout>
+
+    <!-- Produk -->
+    <RelativeLayout
+        android:id="@+id/rlProduk"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlShop" >
+
+        <!--
+        <EditText
+            android:id="@+id/etCariProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toStartOf="@+id/btnFilterProduk"
+            android:background="@drawable/shape_rectangle1"
+            android:drawableStart="@drawable/ic_search_gray"
+            android:drawablePadding="10dp"
+            android:hint="Cari"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:id="@+id/btnFilterProduk"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_filter"/>
+        -->
+        <TextView
+            android:id="@+id/tvProdukDifilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Tampilkan semua"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_regular"/>
+
+        <!-- Tampilkan judul produk yang difilter -->
+
+        <!-- Tampil Produk -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProduk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_product_seller"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

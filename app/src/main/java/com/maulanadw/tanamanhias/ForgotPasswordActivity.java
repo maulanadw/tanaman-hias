@@ -30,7 +30,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
-        btnKembali = findViewById(R.id.btnKembali);
+        //btnKembali = findViewById(R.id.btnKembali);
         etEmail = findViewById(R.id.etEmail);
         btnUbahPass = findViewById(R.id.btnUbahPass);
 
@@ -39,12 +39,15 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         progressDialog.setTitle("Tunggu sebentar");
         progressDialog.setCanceledOnTouchOutside(false);
 
-        btnKembali.setOnClickListener(new View.OnClickListener() {
+
+        /*
+        * btnKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+        * */
 
         btnUbahPass.setOnClickListener(new View.OnClickListener() {
             @Override

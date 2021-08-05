@@ -31,6 +31,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import static android.text.Html.fromHtml;
+
 public class LoginActivity extends AppCompatActivity {
 
     // Tampilan views
@@ -59,6 +61,9 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Tunggu sebentar");
         progressDialog.setCanceledOnTouchOutside(false);
+
+        tvDaftar.setText(fromHtml("Belum memiliki akun? " +
+                "</font><font color='#00B14F'>Daftar.</font>"));
 
         // cek remember me
         SessionManager sessionManager = new SessionManager(LoginActivity.this, SessionManager.SESSION_REMEMBERME);
@@ -97,11 +102,11 @@ public class LoginActivity extends AppCompatActivity {
         password = etPassword.getText().toString().trim();
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            Toast.makeText(this, "Pola email tidak valid.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Pola email tidak valid", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)){
-            Toast.makeText(this, "Masukkan password.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Masukkan password", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -110,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
             sessionManager.createRememberMeSession(email, password);
         }
 
-        progressDialog.setMessage("Masuk . . .");
+        progressDialog.setMessage("Login dalam proses");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -126,14 +131,14 @@ public class LoginActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         // login gagal
                         progressDialog.dismiss();
-                        Toast.makeText(LoginActivity.this, "Akun belum terdaftar!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Akun Anda belum terdaftar!", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
     private void buatSayaOnline() {
         // setelah login berhasil, buat user menjadi online
-        progressDialog.setMessage("Mengecek detail pengguna . . .");
+        progressDialog.setMessage("Loading info pengguna");
 
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("online","true");
