@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KERANJANG SAYA"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_semibold"/>
+
+        <!-- nama toko  -->
+        <TextView
+            android:id="@+id/tvNamaToko"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Nama Toko"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_semibold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray2"/>
+
+        <!-- tampilkan item keranjang -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCartItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:padding="5dp"
+            tools:listitem="@layout/item_cart"/>
+
+        <RelativeLayout
+            android:id="@+id/layoutHarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvSubTotalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Sub Total"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_regular"/>
+
+            <TextView
+                android:id="@+id/tvSubTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Rp. 42000"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/montserrat_regular"/>
+
+            <TextView
+                android:id="@+id/tvOngkirText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Ongkos Kirim"
+                android:textStyle="bold"
+                android:layout_below="@id/tvSubTotalText"
+                android:fontFamily="@font/montserrat_regular"/>
+
+            <TextView
+                android:id="@+id/tvOngkir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Rp. 18000"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/tvSubTotal"
+                android:fontFamily="@font/montserrat_regular"/>
+
+            <TextView
+                android:id="@+id/tvTotalHargaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Total Harga"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_below="@id/tvOngkirText"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+            <TextView
+                android:id="@+id/tvTotalHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Rp. 40000"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/tvOngkir"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="KONFIRMASI"
+            android:background="@color/primary_color_test"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_semibold"/>
+
+    </LinearLayout>
+
+</ScrollView>

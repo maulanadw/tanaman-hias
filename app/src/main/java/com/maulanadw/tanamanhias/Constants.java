@@ -2,10 +2,18 @@ package com.maulanadw.tanamanhias;
 
 public class Constants {
 
-    // kategori tanaman
-    public static final String[] options = {
-            "Tanaman Hias",
-            "Alat menanam",
+    // kategori produk
+    public static final String[] kategoriProduk = {
+            "Tanaman hias",
+            "Alat untuk menanam",
+            "Pupuk",
+            "Lain-lain"
+    };
+
+    public static final String[] kategoriProduk1 = {
+            "Semua",
+            "Tanaman hias",
+            "Alat untuk menanam",
             "Pupuk",
             "Lain-lain"
     };

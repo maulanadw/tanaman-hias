@@ -46,7 +46,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     cekTipeUser();
                 }
             }
-        }, 2500);
+        }, 2000);
     }
 
     private void cekTipeUser() {
@@ -54,22 +54,20 @@ public class SplashScreenActivity extends AppCompatActivity {
         // jika pengguna merupakan user/ pengguna/ pembeli, arahkan tampilan user
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-        ref.orderByChild("uid").equalTo(firebaseAuth.getUid())
+        ref.child(firebaseAuth.getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot ds: dataSnapshot.getChildren()){
-                            String tipeAkun = ""+ds.child("tipeAkun").getValue();
-                            if (tipeAkun.equals("Seller")){
-                                // user merupakan seller, arahkan ke MainSellerActivity.class
-                                startActivity(new Intent(SplashScreenActivity.this, MainSellerActivity.class));
-                                finish();
-                            }
-                            else {
-                                // user merupakan user/ pengguna/ pembeli, arahkan ke MainUserActivity.class
-                                startActivity(new Intent(SplashScreenActivity.this, MainUserActivity.class));
-                                finish();
-                            }
+                        String tipeAkun = "" + dataSnapshot.child("tipeAkun").getValue();
+                        if (tipeAkun.equals("Seller")){
+                            // user merupakan seller, arahkan ke MainSellerActivity.class
+                            startActivity(new Intent(SplashScreenActivity.this, MainSellerActivity.class));
+                            finish();
+                        }
+                        else {
+                            // user merupakan user/ pengguna/ pembeli, arahkan ke MainUserActivity.class
+                            startActivity(new Intent(SplashScreenActivity.this, MainUserActivity.class));
+                            finish();
                         }
                     }
 

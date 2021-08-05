@@ -8,7 +8,8 @@
     tools:context=".LoginActivity">
 
     <!-- Toolbar -->
-    <RelativeLayout
+    <!-- <RelativeLayout
+        android:id="@+id/rlToolbar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:padding="10dp"
@@ -22,82 +23,119 @@
             android:text="Login"
             android:textColor="@color/white"
             android:textSize="20sp" />
-    </RelativeLayout>
+    </RelativeLayout> -->
 
-    <ImageView
-        android:id="@+id/iconIv"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/shape_circle"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/ic_key_white"
-        android:padding="5dp"
-        android:layout_marginBottom="40dp"
-        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome."
+        android:textSize="30sp"
+        android:textColor="@color/primary_color_test"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/montserrat_medium"/>
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_below="@id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="25sp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="#403E3E"/>
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_below="@+id/iconIv"
-        android:hint="Email"
-        android:padding="10dp"
-        android:drawablePadding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:inputType="textEmailAddress"
+        android:layout_below="@+id/login"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/shape_rectangle1"
-        android:drawableStart="@drawable/ic_mail_gray"/>
+        android:drawableStart="@drawable/ic_mail_gray"
+        android:drawablePadding="5dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColorLink="#00B14F"
+        android:fontFamily="@font/montserrat_extralight"/>
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_below="@+id/etEmail"
-        android:hint="Password"
-        android:padding="10dp"
-        android:drawablePadding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_below="@+id/etEmail"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/shape_rectangle1"
+        android:drawableStart="@drawable/ic_lock_gray"
+        android:drawablePadding="5dp"
+        android:hint="Password"
         android:inputType="textPassword"
         android:maxLength="12"
-        android:background="@drawable/shape_rectangle1"
-        android:drawableStart="@drawable/ic_lock_gray"/>
+        android:padding="10dp"
+        android:textColorLink="#00B14F"
+        android:fontFamily="@font/montserrat_extralight"/>
 
     <TextView
         android:id="@+id/tvLupaPass"
-        android:layout_below="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:text="Lupa password?"
-        android:layout_alignParentEnd="true"/>
+        android:textColor="@color/primary_color_test"
+        android:textColorLink="#00B14F"
+        android:fontFamily="@font/montserrat_regular"/>
 
     <CheckBox
         android:id="@+id/cbRememberMe"
-        android:layout_below="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_below="@+id/etPassword"
         android:layout_alignParentStart="true"
-        android:text="Remember me"/>
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Remember me"
+        android:textColorLink="#00B14F"
+        android:fontFamily="@font/montserrat_regular"/>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_below="@+id/tvLupaPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="35dp"
         android:text="Login"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:minWidth="120dp"
-        android:layout_centerHorizontal="true" />
+        android:background="@drawable/btn_custom"
+        android:textColor="@color/white"
+        android:minWidth="150dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/montserrat_semibold"/>
 
     <TextView
         android:id="@+id/tvDaftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Belum punya akun? Register"
+        android:layout_margin="20dp"
+        android:text="Register"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
+        android:fontFamily="@font/montserrat_medium" />
 
 </RelativeLayout>

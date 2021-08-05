@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivProduk"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_product_gray"
+        android:layout_marginStart="16dp"
+        android:adjustViewBounds="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivProduk"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/tvDiskonPersen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rectangle4"
+            android:padding="5dp"
+            android:textSize="10sp"
+            android:text="10% OFF"
+            android:paddingEnd="5dp"
+            android:textColor="#F44336"
+            android:fontFamily="@font/montserrat_semibold"/>
+        <TextView
+            android:id="@+id/tvNamaProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="Nama Produk"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:textColor="@color/colorSubtitle"
+                    android:text="Stock"
+                    android:fontFamily="@font/montserrat_medium"/>
+                <TextView
+                    android:id="@+id/tvJumlahProduk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:textColor="@color/colorSubtitle"
+                    android:text="Harga"
+                    android:fontFamily="@font/montserrat_medium"/>
+                <TextView
+                    android:id="@+id/tvHargaDiskon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Rp 8.000"
+                    android:fontFamily="@font/montserrat_medium"/>
+                <TextView
+                    android:id="@+id/tvHargaUtama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:text="Rp 40.000"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:textColor="@color/colorSubtitle"
+                    android:text="Total"
+                    android:fontFamily="@font/montserrat_medium"/>
+                <TextView
+                    android:id="@+id/tvTotalHarga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Rp 8.000"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <ImageButton
+                    android:id="@+id/btnDecrement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:src="@drawable/ic_remove_gray"/>
+
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <ImageButton
+                    android:id="@+id/btnIncrement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:src="@drawable/ic_add_gray"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnMasukanKeranjang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Masukkan Keranjang"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_custom"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

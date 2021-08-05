@@ -90,7 +90,7 @@ public class EditProfileSellerActivity extends AppCompatActivity implements Loca
         setContentView(R.layout.activity_edit_profile_seller);
 
         // inisialisasi tampilan
-        btnKembali = findViewById(R.id.btnKembali);
+        //btnKembali = findViewById(R.id.btnKembali);
         btnGps = findViewById(R.id.btnGps);
         ivProfil = findViewById(R.id.ivProfil);
         etNama = findViewById(R.id.etNama);
@@ -116,12 +116,14 @@ public class EditProfileSellerActivity extends AppCompatActivity implements Loca
         firebaseAuth = FirebaseAuth.getInstance();
         cekUser();
 
+        /*
         btnKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+         */
 
         ivProfil.setOnClickListener(new View.OnClickListener() {
             @Override

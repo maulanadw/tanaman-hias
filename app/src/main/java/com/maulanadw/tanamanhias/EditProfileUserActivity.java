@@ -87,7 +87,7 @@ public class EditProfileUserActivity extends AppCompatActivity implements Locati
         setContentView(R.layout.activity_edit_profile_user);
 
         // inisialisasi tampilan
-        btnKembali = findViewById(R.id.btnKembali);
+        //btnKembali = findViewById(R.id.btnKembali);
         btnGps = findViewById(R.id.btnGps);
         ivProfil = findViewById(R.id.ivProfil);
         etNama = findViewById(R.id.etNama);
@@ -110,12 +110,14 @@ public class EditProfileUserActivity extends AppCompatActivity implements Locati
         firebaseAuth = FirebaseAuth.getInstance();
         cekUser();
 
-        btnKembali.setOnClickListener(new View.OnClickListener() {
+        /*
+        * btnKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+        * */
 
         ivProfil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -404,7 +406,7 @@ public class EditProfileUserActivity extends AppCompatActivity implements Locati
         }
 
         private void deteksiLokasi() {
-            Toast.makeText(this, "Tunggu sebentar . . .", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Tunggu sebentar", Toast.LENGTH_LONG).show();
 
             kelolaLokasi = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
             kelolaLokasi.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0, this);
@@ -472,7 +474,7 @@ public class EditProfileUserActivity extends AppCompatActivity implements Locati
                         }
                         else {
                             // izin ditolak
-                            Toast.makeText(this,"Izin lokasi dibutuhkan . . .", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this,"Izin lokasi dibutuhkan.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -487,7 +489,7 @@ public class EditProfileUserActivity extends AppCompatActivity implements Locati
                         }
                         else {
                             // jika ditolak
-                            Toast.makeText(this,"Izin Kamera dibutuhkan . . .", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this,"Izin Kamera dibutuhkan", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
